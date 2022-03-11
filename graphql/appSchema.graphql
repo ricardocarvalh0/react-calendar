@@ -1,0 +1,13 @@
+scalar Date
+scalar DateTime
+scalar JSON
+
+type User {
+    id: ID!
+    name: String!
+    status: String!
+}
+
+type Query {
+    getViewer: User
+}

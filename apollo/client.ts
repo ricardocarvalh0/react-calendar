@@ -21,7 +21,19 @@ function createApolloClient(): ApolloClient<NormalizedCacheObject> {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined',
     link: createIsomorphLink(),
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache({
+      typePolicies: {
+        Query: {
+          fields: {
+            getReminders: {
+              merge(existing, incoming) {
+                return incoming;
+              }
+            }
+          }
+        }
+      }
+    }),
   })
 }
 

@@ -1,0 +1,70 @@
+.container {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    border-top: 1px solid darkgrey;
+    border-left: 1px solid darkgrey;
+    /*height: 100vh;*/
+}
+
+.columnHeader {
+    text-align: center;
+}
+
+.dayHeader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+    margin-bottom: 0.5rem;
+}
+
+.dayNumber {
+    width: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
+    border-radius: 100%;
+}
+.dayNumber.today {
+    background-color: #89b9e3;
+}
+
+.day {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    border-right: 1px solid darkgrey;
+    border-bottom: 1px solid darkgrey;
+    height: calc((100vh - 54px)/6);
+    overflow: hidden;
+    padding: 0.5rem 0;
+}
+
+.day.disabled > div {
+    opacity: 0.25;
+}
+
+.day:last-child {
+    margin-bottom: 1rem;
+}
+
+.day:hover {
+    background-color: aliceblue;
+}
+
+.reminder {
+    display: flex;
+    align-items: center;
+    height: 1.5rem;
+    color: white;
+    width: 95%;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-left: 0.33rem;
+}
+
+.reminder:hover {
+    opacity: 0.9;
+}

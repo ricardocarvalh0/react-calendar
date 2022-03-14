@@ -2,12 +2,41 @@ scalar Date
 scalar DateTime
 scalar JSON
 
-type User {
+type Reminder {
     id: ID!
-    name: String!
-    status: String!
+    text: String!
+    color: String
+    date: Float!
+}
+
+input GetRemindersInput {
+    date: Float
+}
+
+input CreateRemindersInput {
+    id: ID!
+    text: String!
+    color: String
+    date: Float!
+}
+
+input UpdateRemindersInput {
+    id: ID!
+    text: String
+    color: String
+    date: Float
+}
+
+input DeleteRemindersInput {
+    id: ID!
 }
 
 type Query {
-    getViewer: User
+    getReminders(input: GetRemindersInput): [Reminder]!
+}
+
+type Mutation {
+    createReminder(input: CreateRemindersInput): Reminder!
+    updateReminder(input: UpdateRemindersInput): Reminder!
+    deleteReminder(input: DeleteRemindersInput): ID!
 }

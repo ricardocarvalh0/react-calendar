@@ -24,6 +24,7 @@
     "target": "ES6",
     "types": [
       "react",
+      "jest"
     ],
     "strict": false,
     "incremental": true

@@ -1,7 +1,15 @@
-import getViewer from "../graphql/resolvers/getViewer";
+import getReminders from "../graphql/resolvers/getReminders";
+import createReminder from "../graphql/resolvers/createReminder";
+import updateReminder from "../graphql/resolvers/updateReminder";
+import deleteReminder from "../graphql/resolvers/deleteReminder";
 
 export const resolvers = {
   Query: {
-    getViewer
+    getReminders
   },
+  Mutation: {
+    createReminder,
+    updateReminder,
+    deleteReminder
+  }
 }
